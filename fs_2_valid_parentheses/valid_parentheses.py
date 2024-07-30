@@ -22,3 +22,19 @@ def valid_parentheses(parens):
         >>> valid_parentheses(")()(")
         False
     """
+    balance = 0
+
+    for char in parens:
+        if char == '(':
+            balance += 1
+        elif char == ')':
+            balance -= 1
+            if balance < 0:
+                return False 
+            
+    return balance == 0
+
+print(valid_parentheses("()"))        
+print(valid_parentheses("()()"))        
+print(valid_parentheses("(()())"))        
+print(valid_parentheses(")()"))        

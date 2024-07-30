@@ -13,3 +13,15 @@ def find_factors(num):
     >>> find_factors(321421)
     [1, 293, 1097, 321421]
     """
+    factors = set()
+    for i in range(1, int(num**0.5) + 1):
+        if num % i == 0:
+            factors.add(i)
+            factors.add(num // i)
+
+    return sorted(factors)
+
+print(find_factors(10))
+print(find_factors(11))
+print(find_factors(111))
+print(find_factors(321421))
